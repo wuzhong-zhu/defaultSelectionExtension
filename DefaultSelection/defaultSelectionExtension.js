@@ -51,40 +51,34 @@ function ( $,qlik) {
 			}
 		},
 		paint: function ($element,layout) {
-			var carryOnFlag =true;
-			if(sessionStorage.getItem('defaultSelectionApplied')!=null)
+			//Awkward naming to ensure uniqueness
+			if(sessionStorage.getItem('defaultSelectionApplied_Zhu123')!=null)
 			{
 				console.log("Default selection is disabled for this session because it is already been performed.");
+				return;
 			} 
 			else if(layout.thresholdTime>0)
 			{
 				if(window.performance.now()>layout.thresholdTime*1000)
 				{
 					console.log("Default selection is disabled for this session because it passes threshold time.");
+					return;
 				}
 			}
-			else{
-				var app=qlik.currApp();
-				var field;
-				var value;
-				layout.listItems.forEach(function(i){
-					field=app.field(i.field);
-					value=i.value;
-					console.log(field)
 
-					field.clear();
-					field.selectMatch(value, true);
-					sessionStorage.setItem('defaultSelectionApplied', 'true');
-					// if (field.field==null){
-					// 	console.log("Field name error, unable to identify the field, Please remove equal sign(=) from field definition");
-					// }
-					// else{
-					// 	field.clear();
-					// 	field.selectMatch(value, true);
-					// 	sessionStorage.setItem('defaultSelectionApplied', 'true');
-					// }
-				})
-			}
+			var app=qlik.currApp();
+			var field;
+			var value;
+			layout.listItems.forEach(function(i){
+				field=app.field(i.field);
+				value=i.value;
+				// console.log(field)
+				// console.log(value)
+				field.clear();
+				field.selectMatch(value, true);
+				sessionStorage.setItem('defaultSelectionApplied_Zhu123', 'true');
+			})
+
 		}
 	};
 

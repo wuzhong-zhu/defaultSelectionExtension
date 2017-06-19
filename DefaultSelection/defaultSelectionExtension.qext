@@ -1,6 +1,6 @@
 {
 	"name": "defaultSelectionExtension",
-	"description": "Basic empty visualization template",
+	"description": "Default selection extension",
 	"type": "visualization",
 	"version": "1.0.0",
 	"icon": "extension",
