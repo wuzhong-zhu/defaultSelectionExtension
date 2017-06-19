@@ -24,4 +24,5 @@ For example if threshold time is 10. Default selection won't happen if the user 
 What is it for? If your user starts with the last sheet and he navigates backwards. It makes no sense for default selection to happen when your user goes back to the first page. And it could be annoying.
 
 Ideally this extension should detect if current sheet is the first sheet user opens but I don't know how to do that.So a timers is the best I can do.
+
 ![alt text](https://github.com/wuzhong-zhu/defaultSelectionExtension/raw/master/Media/showcase.gif)
